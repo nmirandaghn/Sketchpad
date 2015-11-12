@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://code.jquery.com/jquery-1.11.3.js"></script>
+    <meta charset="utf-8">
+    <title>Sketchpad</title>
+    <style id="jsbin-css">
+      #box {
+        text-align: center;
+        position:absolute;
+        left: auto;
+      }
+
+      .empty {
+        width: 20px;
+        height: 20px;
+        float: left;
+        background-color: lightgray;
+      }
+
+      .row {
+        clear: both;
+      }
+    </style>
+  </head>
+  <body>
+    <button type='type'>Setup grid</button>
+    <div id='box'></div>
+    <script id="jsbin-javascript">
+      $(document).ready(function(){
+        $('button').click(function() {
+          $('#box').empty();
+          var boxes = +prompt('Specifiy # of boxes please');
+          for(var i = 1;i <= boxes;i++) {
+            for(var j = 1;j <= boxes;j++){
+              $('#box').append('<div class="empty"></div>');  
+            }
+            $('#box').append('<div class="row"></div>');  
+          }
+          $('.empty').mouseenter(function() {
+            var r = Math.floor((Math.random() * 255) + 1);
+            var g = Math.floor((Math.random() * 255) + 1);
+            var b = Math.floor((Math.random() * 255) + 1);
+
+            $(this).css('background-color', 'rgb(' + r + ',' + g + ', ' + b + ')');
+          });
+        });
+      });
+    </script>
+  </body>
+</html>>)}>)})})
